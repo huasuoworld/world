@@ -1,0 +1,9 @@
+#auto build java project
+- hosts: localhost
+  tasks:
+    - name: step1 build project
+      shell: curl -X POST http://127.0.0.1:8080/jenkins/job/world/build --user huasuoworld:Hcl@13129511075
+    - name: step2 download project
+      shell: curl -o /tmp/world-0.0.1-SNAPSHOT.war http://localhost:8080/jenkins/job/world/lastBuild/huasuo$world/artifact/huasuo/world/0.0.1-SNAPSHOT/world-0.0.1-SNAPSHOT.war --user huasuoworld:Hcl@13129511075
+    - name: step3 copy project file
+      copy: src=/tmp/world-0.0.1-SNAPSHOT.war dest=/home/huasuoworld/lib/apache-tomcat-9.0.0.M17/webapps/world-0.0.1-SNAPSHOT.war
