@@ -2,5 +2,3 @@
 sudo chmod -R ugo+rw /mnt/my-address
 
 curl -X POST http://127.0.0.1:8080/jenkins/job/world/build --user huasuoworld:Hcl@13129511075
-
-curl -o /tmp/world-0.0.1-SNAPSHOT.war http://localhost:8080/jenkins/job/world/lastBuild/huasuo$world/artifact/huasuo/world/0.0.1-SNAPSHOT/world-0.0.1-SNAPSHOT.war --user huasuoworld:Hcl@13129511075
