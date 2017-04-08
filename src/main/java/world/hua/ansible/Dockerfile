@@ -1,8 +1,8 @@
 FROM         ubuntu
 MAINTAINER    linux
 #把java与tomcat添加到容器中
-COPY jdk1.8.0_121 /usr/local/
-COPY apache-tomcat-9.0.0.M17 /usr/local/
+COPY jdk1.8.0_121/ /usr/local/jdk1.8.0_121/
+COPY apache-tomcat-9.0.0.M17/ /usr/local/apache-tomcat-9.0.0.M17/
 #配置java与tomcat环境变量
 ENV JAVA_HOME /usr/local/jdk1.8.0_121
 ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
