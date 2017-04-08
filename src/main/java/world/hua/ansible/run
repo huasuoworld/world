@@ -1,7 +1,5 @@
-docker build -t ubuntu:base -f /home/huasuoworld/lib/dockerbuild/Dockerfile /home/huasuoworld/lib/dockerbuild
+sudo docker build -t tomcat:latest -f /home/huasuoworld/lib/dockerbuild/Dockerfile /home/huasuoworld/lib/dockerbuild
 
-sudo docker run -ti ubuntu /bin/bash
+sudo docker run -d -p 8080:8080 tomcat
 
-docker kill $(docker ps -q) ; 
-docker rm $(docker ps -a -q) ;
-dockerrmi $(docker images -q -a)
+sudo docker stop containerid
