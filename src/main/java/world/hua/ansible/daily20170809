@@ -1,0 +1,34 @@
+ajax请求
+$.ajax({
+    	type: 'post',
+        url: 'https://www.huasuoworld.com',
+        data:'',
+        dataType:'json',
+        timeout:60000,
+        success:function(data){
+    		console.log(data);
+    	}
+    });
+
+maven
+mvn install:install-file -Dfile=xxx.3.3.jar -DgroupId=org.huasuoworld -DartifactId=xxx-Dversion=3.3 -Dpackaging=jar
+
+mongodb导数据
+/opt/mongodb-linux-x86_64-rhel62-3.4.4/bin/mongod -dbpath  /opt/mongodb-linux-x86_64-rhel62-3.4.4/db  -logpath  /opt/mongodb-linux-x86_64-rhel62-3.4.4/log/mongodb.log --port=27017 --bind_ip 192.168.4.21 --maxConns 1000 --auth
+
+bin/mongo --port 27017 --host 192.168.4.21 -u admin -p 123456 --authenticationDatabase pro_zbt
+
+db.createUser({user: "admin",pwd: "123456",roles: [ "readWrite", "dbAdmin" ]})
+
+mongoimport.exe /db:pro_zbt /collection:lecture /file:E:/system_business_log.json  /jsonArray
+
+linux文件大小
+du --max-depth=1 -h /
+
+结束进程
+ps -ef | grep java | grep apache-tomcat-8.0.36|awk '{print $2}'
+
+ps -ef| grep java | grep apache-tomcat-8.0.36 |awk  '{print "kill -9 " $2}' |sh
+
+nohup启动springboot
+nohup java -jar -Xmx1024m -Xms1024m -Xmn1g xxx-0.0.1-SNAPSHOT.jar >>/usr/local/logs/xxx.txt  2>&1 &
