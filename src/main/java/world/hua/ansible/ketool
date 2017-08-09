@@ -1,0 +1,20 @@
+生成证书
+
+keytool -genkey -alias tomcat -keyalg RSA -keystore E:\data\cas_build\tomcat.keystore
+
+keytool -export -alias tomcat -keystore E:\data\cas_build\tomcat.keystore -file E:\data\cas_build\tomcat.cer -storepass 123456
+
+keytool -import -trustcacerts -alias tomcat -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -file E:\data\cas_build\tomcat.cer -storepass 123456
+
+keytool -list -v -alias tomcat -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -storepass changeit
+
+keytool -delete -alias tomcat -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -storepass changeit
+
+keytool -storepasswd -new newpassword -keystore tomcat.keystore
+
+changeit
+
+tomcat
+
+您的名字与姓氏是什么?
+  [Unknown]:  localhost
