@@ -2,3 +2,5 @@
 sudo chmod -R ugo+rw /mnt/my-address
 
 curl -X POST http://127.0.0.1:8080/jenkins/job/world/build --user huasuoworld:Hcl@13129511075
+
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'grant_type=authorization_code&code=Li4NZo&redirect_uri=http://test' "http://client:secret@localhost:8080/oauth/token"
